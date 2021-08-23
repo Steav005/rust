@@ -9,8 +9,8 @@ static-libstdcpp = []
 emscripten = []
 
 [dependencies]
-libc = "0.2.73"
+libc = { git = "https://github.com/Steav005/libc" }
 
 [build-dependencies]
 build_helper = { path = "../../src/build_helper" }
-cc = "1.0.68"
+cc = { git = "https://github.com/Steav005/cc-rs" }

@@ -9,10 +9,10 @@ test = false
 
 [dependencies]
 bitflags = "1.2.1"
-cc = "1.0.68"
+cc = { git = "https://github.com/Steav005/cc-rs" }
 itertools = "0.9"
 tracing = "0.1"
-libc = "0.2.50"
+libc = { git = "https://github.com/Steav005/libc" }
 jobserver = "0.1.22"
 tempfile = "3.2"
 pathdiff = "0.2.0"
