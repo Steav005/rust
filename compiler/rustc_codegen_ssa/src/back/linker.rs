@@ -3,7 +3,6 @@ use super::command::Command;
 use super::symbol_export;
 use rustc_span::symbol::sym;
 
-use std::env;
 use std::ffi::{OsStr, OsString};
 use std::fs::{self, File};
 use std::io::prelude::*;
@@ -1449,7 +1448,7 @@ impl<'a> Linker for L4Bender<'a> {
         self.cmd.arg("-nostdlib");
     }
 
-    fn export_symbols(&mut self, _: &Path, _: CrateType) {
+    fn export_symbols(&mut self, _: &Path, _: CrateType, _: &[String]) {
         // ToDo, not implemented, copy from GCC
         self.sess.warn("exporting symbols not implemented yet for L4Bender");
         return;
@@ -1521,7 +1520,7 @@ impl<'a> L4Bender<'a> {
     }
 }
 
-ub(crate) fn exported_symbols(tcx: TyCtxt<'_>, crate_type: CrateType) -> Vec<String> {
+pub(crate) fn exported_symbols(tcx: TyCtxt<'_>, crate_type: CrateType) -> Vec<String> {
     if let Some(ref exports) = tcx.sess.target.override_export_symbols {
         return exports.clone();
     }
