@@ -29,7 +29,8 @@ Session.vim
 !/src/test/run-make/thumb-none-qemu/example/.cargo
 
 ## Configuration
-/config.toml
+# Allow config toml because this is not the official rust repo
+#/config.toml
 /Makefile
 config.mk
 config.stamp
@@ -50,6 +51,9 @@ no_llvm_build
 /tmp/
 # Created by default with `src/ci/docker/run.sh`
 /obj/
+
+## Patched target folder
+/patched
 
 ## Temporary files
 *~

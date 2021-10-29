@@ -1,0 +1,19 @@
+changelog-seen = 2
+[llvm]
+download-ci-llvm = true
+[build]
+build = "x86_64-unknown-linux-gnu"
+target = ["x86_64-unknown-linux-gnu", "armv7-unknown-l4re-uclibceabihf", "x86_64-unknown-l4re-uclibc"]
+docs = false
+extended = false
+install-stage = 1
+submodules = true
+fast-submodules = false
+[install]
+prefix = './patched'
+sysconfdir = "./etc"
+[rust]
+description = "l4re-custom"
+optimize = true
+jemalloc = false
+backtrace = false
